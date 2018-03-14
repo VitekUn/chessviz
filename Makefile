@@ -1,0 +1,2 @@
+dos: main.c
+	gcc -Wall -o dos main.c
