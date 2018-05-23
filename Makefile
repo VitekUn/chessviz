@@ -3,22 +3,22 @@ all: bin/prog bin/test
 bin/prog: build/main.o build/board_initialization.o build/move.o build/decode.o build/output.o build/checking.o
 	gcc -Wall -Werror build/checking.o build/main.o build/board_initialization.o build/move.o build/decode.o build/output.o -o bin/prog
 
-build/main.o: src/main.c
+build/main.o:
 	gcc -Wall -Werror -c src/main.c -o build/main.o 
 
-build/board_initialization.o: src/board_initialization.c
+build/board_initialization.o:
 	gcc -Wall -Werror -c src/board_initialization.c -o build/board_initialization.o 
 
-build/move.o: src/move.c
+build/move.o:
 	gcc -Wall -Werror -c src/move.c -o build/move.o 
 
-build/decode.o: src/decode.c
+build/decode.o:
 	gcc -Wall -Werror -c src/decode.c -o build/decode.o
 
-build/output.o: src/output.c
+build/output.o: 
 	gcc -Wall -Werror -c src/output.c -o build/output.o
 
-build/checking.o: src/checking.c
+build/checking.o:
 	gcc -Wall -Werror -c src/checking.c -o build/checking.o
 
 bin/test: build/test.o build/checking.o build/board_initialization.o build/ctest.o build/move.o build/output.o
