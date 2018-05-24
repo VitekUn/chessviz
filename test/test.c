@@ -37,7 +37,7 @@ CTEST(move_suite, move_pawn) // Ход пешки
 	
 	output(mass);
 	move (mass, 0, 1, 0, 3); 					//проверка на возможность рубить пешкой
-    move(mass, 1, 6, 1, 4);
+    move (mass, 1, 6, 1, 4);
 	int check4 = move_checking(mass, 3, 0, 4, 1); 
 
 	//THEN
@@ -87,6 +87,7 @@ CTEST(move_suite, move_slon) // Ход слона
 	ASSERT_EQUAL(expected5, check5);
 	ASSERT_EQUAL(expected6, check6);
 }
+
 CTEST(move_suite, move_hourse) // Ход коня
 {
 	//GIVEN
@@ -216,4 +217,29 @@ CTEST(move_suite, move_king) // Ход король
 	ASSERT_EQUAL(expected4, check4);
 	ASSERT_EQUAL(expected5, check5);
 	ASSERT_EQUAL(expected6, check6);
+}
+
+CTEST(check, data_checking) // Проверка данных
+{
+	//GIVEN
+	char letter1 = 'A', letter2 = 'A', tire = '-';
+	int number1 = 1, number2 = 2;
+	
+	//WHEN
+	int check = data_checking(letter1, letter2, tire, number1, number2);
+
+	letter1 = '2';
+	letter2 = 'Q';
+	tire = '-';
+	number1 = 'A';
+	number2 = 1234;
+
+	int check2 = data_checking(letter1, letter2, tire, number1, number2);
+
+	//THEN
+	const int expected = 0;
+	const int expected2 = -1;
+
+	ASSERT_EQUAL(expected, check);
+	ASSERT_EQUAL(expected2, check2);
 }
