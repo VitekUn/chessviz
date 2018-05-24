@@ -7,7 +7,7 @@ int data_checking(char letter1, char letter2, char tire, int number1, int number
         int numb[8] = {1, 2, 3, 4, 5, 6, 7, 8};
         if(tire != '-')
         {
-            printf ("Ошибка формата\n");
+            //printf ("Ошибка формата\n");
             return -1;
         }
         for (i = 0; i < 8; i++){
@@ -21,7 +21,7 @@ int data_checking(char letter1, char letter2, char tire, int number1, int number
                         flag++;
         }
         if (flag != 4){
-        	printf("Ошибка данных\n");
+        	//printf("Ошибка данных\n");
            return -1;      
         }
         else
